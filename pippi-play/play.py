@@ -12,6 +12,9 @@ class Voice:
 		tones = tonesList	
 		length = segmentLength
 
+	def addTone(tone):
+		tones.add(tone)
+
 	def combineTones():
 		for i in tones:
 			sound = dsp.interleave(sound, i)
@@ -20,6 +23,14 @@ class Voice:
 	def output(filename):
 		dsp.write(sound, outputfile) 
 	
+
+def voiceAttempt2():
+	wordLength = 5
+	tone1 = dsp.tone(dsp.stf(wordLength), 220, 0.5) 
+	tone2 = dsp.tone(dsp.stf(wordLength), 220, 0.5) 
+	tone3 = dsp.tone(dsp.stf(wordLength), 220, 0.5) 
+	dsp.tone(dsp.stf(wordLength), 220, 0.5) 
+	voice1 = Voice(5, [tone1, tone2, tone3]
 
 
 # Voice attempt 1 (AKA two tones)
